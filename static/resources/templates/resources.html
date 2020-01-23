@@ -1,0 +1,67 @@
+
+
+   
+    <% _.each(results.results, function(obj){ %>
+      <tr data-pk='<%= obj.id %>' class='resource_view' >
+
+      <% if (obj.file_type_name=="PDF") { %>
+        <td class = "">
+          <a href="javascript:;" data-pk='<%= obj.id %>' class='tbl-btn '>
+         <i class="fas fa-book-open" style="color:#fbb450;font-size: 15px;"></i>
+          <!-- <img src="https://image.flaticon.com/icons/svg/171/171322.svg" style="color:#fbb450;font-size: 15px;">-->
+          </a>
+        </td><% } %>
+        <% if (obj.file_type_name=="Video") { %><td class = "">
+        <a href="javascript:;" data-pk='<%= obj.id %>' class='tbl-btn '>
+          <i class="fas fa-play-circle" style="color:#fbb450; font-size: 15px;"></i>
+        </a>
+        </td><% } %>
+
+        <td colspan='5' class = "mobile_view" style="width: 260px;"><%= obj.name %>
+        <p style="font-size: 0.7rem;margin: 0px 0px 10px;">Grade <% _.each(obj.grade, function(gd){ %>
+             <%= gd.name %>, 
+          <% }); %>|<%= obj.subject_name %>|<%= obj.content_partner_name %>
+          </p>
+        </td>
+        <td class="like like_sty" id="css_sty"><!--<i class="fas fa-thumbs-up"></i>-->
+         <% if ( obj.id && obj.like==true) { %>
+          <a  data-pk='<%= obj.id %>' class="tbl-btn resource_like normal_lk" target="_new" hidden><i class="far fa-thumbs-up styl styl_like" ></i>Like</a>
+          <a  data-pk='<%= obj.id %>' class="tbl-btn resource_like success_lk" target="_new" ><i class="fas fa-thumbs-up styl styl_like success_lk" ></i>Like</a>
+        <% }else{%>
+        <a  data-pk='<%= obj.id %>' class="tbl-btn resource_like normal_lk" target="_new"><i class="far fa-thumbs-up styl styl_like" ></i>Like</a>
+        <a  data-pk='<%= obj.id %>' class="tbl-btn resource_like success_lk" target="_new" hidden><i class="fas fa-thumbs-up styl styl_like success_lk" ></i>Like</a>
+       <% } %>
+        </td>
+        <td class="share share_sty" id="css_sty">
+        <a  id="share_<%= obj.id %>" data-pk='<%= obj.id %>' class="tbl-btn resource_share addthis_button_compact" target="_new" ><i class="fas fa-share-alt styl styl_share" ></i>Share</a></td>
+        <td class="bookmark bm_sty" id="css_sty">
+        <% if ( obj.id && obj.bookmark==true) { %>
+         <a  data-pk='<%= obj.id %>' class="tbl-btn resource_bookmark normal_bm" target="_new" hidden><i class="far fa-bookmark styl styl_bookmark" ></i>Bookmark</a>
+        <a  data-pk='<%= obj.id %>' class="tbl-btn resource_bookmark success_bm" target="_new" ><i class="fas fa-bookmark styl styl_bookmark success_bm" ></i>Bookmark</a>
+        <% }else{%>  
+        <a  data-pk='<%= obj.id %>' class="tbl-btn resource_bookmark normal_bm" target="_new"><i class="far fa-bookmark styl styl_bookmark" ></i>Bookmark</a>
+        <a  data-pk='<%= obj.id %>' class="tbl-btn resource_bookmark success_bm" target="_new" hidden><i class="fas fa-bookmark styl styl_bookmark success_bm" ></i>Bookmark</a>
+        <% } %>
+        </td>
+ 
+       <!-- <td><i class="fas fa-bookmark"></i>
+          <% _.each(obj.grade, function(gd){ %>
+             <%= gd.name %>, 
+          <% }); %>
+        </td>
+        <td><%= obj.subject_name %></td>
+        <td><%= obj.content_partner_name %></td>
+        <td><%= obj.file_type_name %></td>-->
+        <td class="dwn" id="css_sty">
+          <% if (obj.file) { %>
+              <a href="<%= obj.file %>" class="tbl-btn resource_download" target="_new">
+                <i class="ti-download styl"></i><span class="hide1">Download<span>
+              </a>
+          <% }else{%>
+              <a href="<%= obj.link %>" class="tbl-btn resource_download" target="_new">
+                <i class="ti-download styl"></i><span class="hide1">Download<span>
+              </a>
+          <% } %>
+        </td>
+      </tr>
+    <% }); %>

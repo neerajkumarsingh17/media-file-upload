@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/static/mx_discourse/discourse_plugin/index.css">
+
+<!-- jQuery library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
+
+<div class="row">
+    <div class="col-md-12 card-size">
+        <div id="post_discussions" class="post_discussions chat-over"></div>
+    </div>
+</div>
+
+<div id="cmntboxrow" class="row">
+    <div class="col-md-12">
+        <form id="cmntbox">
+                <div  style="margin-bottom: 10px;" class="main-editor">
+                    <!-- <div class="attach-box" style="display:none">
+                        <div class="attach-input-box"><span><img src="/static/mx_discourse/discourse_plugin/images/file.svg" alt=""></span><input type="file"></div>
+                        <div class="attach-input-box"><span><img src="/static/mx_discourse/discourse_plugin/images/video.svg" alt=""></span><input type="file"></div>
+                        <div class="attach-input-box"><span><img src="/static/mx_discourse/discourse_plugin/images/image.svg" alt=""></span><input type="file"></div>
+                    </div> -->
+                   
+                    <div class="cmntarea" style="padding-right: 0px;"><!--onclick="autosize()-->
+                       <!-- <textarea id="post_message" name="post_message" class="form-control textDiscussion cmntarea autosize" rows="1" cols="1" style="resize:none;border-radius: 15px;border: none;" placeholder="Add public reply"></textarea>-->
+                        <div id="post_message" name="post_message" class="form-control textDiscussion autosize" rows="1" cols="1" style="resize:none;border-radius: 15px;border: none;" placeholder="Add public reply" contenteditable="true">
+                        <div id="newpost" class="user-cursor-blink"></div>
+                        </div>
+                       <!--<div class="t-cursor-blink"></div>--> 
+                        <span class="attachment-icon" onclick="attach_file_icon()"></span><!--<a onclick="attach_file('/resourse_filetype', 'myPop1',650,550);" href="javascript:void(0);"></a>-->
+                        <div class="modal-container"></div>
+                        <div class="resource-file-icon" hidden>
+                            <ul>
+                            <li onclick="attach_file()"> <i class="fa fa-file-text" aria-hidden="true"></i><p>Documents</p></li>
+                            <li onclick="attach_picture()"> <i class="fa fa-picture-o" aria-hidden="true"></i><p>Picture</p></li>
+                            <li onclick="attach_video()"> <i class="fa fa-play" aria-hidden="true"></i><p>Video</p></li>
+                            </ul>
+                        </div>
+                       <!-- <span class="close-popup"></span>-->
+                    </div>
+                    <div class="cmntboxarea" style="padding-left: 2px;padding-top:2px;">
+                        <img class="img-responsive sendMessageBox" src="/static/mx_discourse/discourse_plugin/images/send.png" style="width:30px;" >
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>

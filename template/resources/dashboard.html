@@ -1,0 +1,66 @@
+<%!
+  import json
+  from django.utils.translation import ugettext as _
+  from openedx.core.djangolib.js_utils import dump_js_escaped_json
+%>
+<%inherit file="../courses-base.html" />
+
+<%namespace name='static' file='../static_content.html'/>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">   
+<!--<link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.1.5/css/dx.common.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.1.5/css/dx.light.css" />
+-->
+<link href="${static.url('firki/css/courses-page.css')}" rel="stylesheet">
+<link href="${static.url('firki/css/resources-page.css')}" rel="stylesheet">
+<link href="${static.url('firki/css/resources.css')}" rel="stylesheet">
+<script data-main="${static.url('js/resources/app')}" src="${static.url('js/resources/require.js')}"></script>
+
+<%block name="pagetitle">${_("Resources")}</%block>
+<div id="wrapper" class="ease3 tfi courses resources_design">
+
+    <div class="col-md-12"  style="margin-bottom: 23px;" > 
+    <div class="for-order">
+        <div class="col-md-12 banner" id="banner">
+        
+        </div>
+        <div class="col-md-12">
+
+          <div id="search-form" class="resourses_form">
+            
+          </div>
+          <div id="banner_not_found"></div>
+        </div>
+        </div>
+      
+        <div class="col-md-3  left-nav for_stly" id="left-nav">
+
+        </div>
+
+        <div class="col-md-9 resource_parent_div">
+
+         
+          <h3 class="hidden-lg hidden-md reso"><u>Resources</u></h3>
+          <div>
+            <table id="resources_data" class="table table-hover">
+              <tbody  id="resources_div">
+              <div id="data_not_found_msg"></div>
+              </tbody>
+              </table>
+          </div>
+        </div>
+        <!--If data not found then user understanding message-->
+         
+        <!--<div class="col-md-3 right-nav" id="right-nav" style="display: none">
+         
+        </div>-->
+    </div>
+</div>
+</div>
+<script>
+if (navigator.userAgent.trim().toLowerCase().includes("firki")){
+        $('html').css("margin","0px 0px 0px 0px" , 'important');
+    }
+</script>
+

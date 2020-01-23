@@ -1,0 +1,59 @@
+<div class="modal-dialog popup_size" style="height: 80%;">
+    <div class="modal-content">
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <% if (data.file) { %>
+                        <iframe src="<%= data.file %>" style="width: 100%; height: 100%;"></iframe>
+                    <% }else{%>
+                        <iframe src="<%= data.link %>" style="width: 100%; height: 100%;"></iframe>
+                    <% } %>
+                </div>
+                <div class="col-md-4 vs-drop-details" style="color: black;font-size: smaller;">
+                    <button type="button" class="close pull-right close-btn" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="drop-title"><%= data.name %></h4>
+                    <p class="drop-description">
+                        <%= data.content_partner_name %> | 
+
+                        <% _.each(data.grade, function(gd){ %>
+                         <%= gd.name %>, 
+                      <% }); %>
+
+                         | <%= data.subject_name %> | <%= data.file_type_name %>
+
+                         <br>
+                         <div class="btn_sbd">
+                        <td class="share share_sty" id="css_sty">
+                        <a  id="share_<%= data.id %>" data-pk='<%= data.id %>' class="tbl-btn resource_share addthis_button_compact" target="_new" ><i class="fas fa-share-alt styl styl_share" ></i>Share</a></td>
+
+                        <% if ( data.id && data.bookmark==true) { %>
+                            <a  data-pk='<%= data.id %>' class="tbl-btn resource_bookmark normal_bm" target="_new" hidden><i class="far fa-bookmark styl styl_bookmark" ></i>Bookmark</a>
+                            <a  data-pk='<%= data.id %>' class="tbl-btn resource_bookmark success_bm" target="_new" ><i class="fas fa-bookmark styl styl_bookmark success_bm" ></i>Bookmark</a>
+                        <% }else{%>  
+                            <a  data-pk='<%= data.id %>' class="tbl-btn resource_bookmark normal_bm" target="_new"><i class="far fa-bookmark styl styl_bookmark" ></i>Bookmark</a>
+                            <a  data-pk='<%= data.id %>' class="tbl-btn resource_bookmark success_bm" target="_new" hidden><i class="fas fa-bookmark styl styl_bookmark success_bm" ></i>Bookmark</a>
+                        <% } %>
+                        <% if (data.file) { %>
+                            <a href="<%= data.file %>" class="tbl-btn resource_download" target="_new">
+                                <i class="ti-download styl"></i>Download
+                            </a>
+                        <% }else{%>
+                            <a href="<%= data.link %>" class="tbl-btn resource_download" target="_new">
+                                <i class="ti-download styl"></i>Download
+                            </a>
+                        <% } %>
+                        </div><br>
+                        <div class="res_descrip">
+                        <%= data.description %>
+                         <br><br>
+                        <a href=<%= data.source_url %> target="_blank" class="social_link"><%= data.source_url %></a> 
+                   
+                        </div>
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->

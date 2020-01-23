@@ -1,0 +1,90 @@
+
+
+
+<div class="content-wrapper tfi-content-wrapper" id="content">
+	<div class="resource-box">
+		<div class="res-popup_windows">
+			<div class="resource-steup">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group resource-file">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="close_btn()">&times;</button>
+								<label for="flair_url">Documents</label>
+			                    <div class="content">
+				                    <div class="box"><!--class="source-file"-->
+				                    	<input type="file" class="source-file" name="avatar" id="create_re_file" accept=".doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  onchange="resFile()">
+				                    	<label for="create_re_file" class="file-choose docs-file">
+				                    	<i class="fa fa-file-text" aria-hidden="true"></i>
+				                    	<span class="filetype">Browse File</span>
+										<div id="error_file" style='color:#f00;'></div>
+				                    	</label>
+                                    </div>				
+			                    </div>
+		                	</div>
+                    	</div>
+
+						<div class="col-sm-12">
+							<div class="form-group select-box res_nametype">
+								<label>Resource Name</label>
+								<input type="text" class='form-control' id='resource_name'>
+								<div id='error_name' style='color:#f00;'></div>
+							</div>
+						</div>
+								<div class="col-sm-12">
+									<div class="form-group select-box subject_type">
+										<label>Subject</label>
+										% for subject in subjects:
+											<span class="subject_tagtype" onclick="subject_tagtype()" data-pk='${subject}'>${subject}</span class="subject_tagtype">
+										% endfor
+										<div id="error_subject" style='color:#f00;'></div>
+									</div>
+								</div>
+							<!--	<div class="col-sm-12" >
+									<div class="form-group select-box">
+										<label>Content Partner</label>
+										<select class="form-control" id="contentpartner">
+											% for contentpartner in contentpartners:
+											<option value='${contentpartner}'>${contentpartner}</option>
+										% endfor
+										</select>
+									</div>
+								</div>-->
+
+										
+						<div class="col-sm-12">
+							<div class="form-group select-box grades grades_type" id="grades_type">
+								<label>Grades</label>
+                           	<!-- <div id="gradesfile"></div>-->
+								% for grade in grades:
+									<span class="grade_tagtype" onclick="grade_tagtype()" data-pk='${grade}'>grade ${grade}</span>
+								% endfor
+				
+							<div id="error_grade" style='color:#f00;'></div>
+                            </div>
+						</div>	
+
+								<div class="col-sm-12">
+									<div class="form-group select-box">
+										<label>Content Type</label>
+										<select class="form-control" id="filetype">
+                                        % for filetype in filetypes:
+											<option value='${filetype}'>${filetype}</option>
+										% endfor
+										</select>
+									</div>
+								</div>
+											
+
+						<div class="col-sm-12">
+							<div class="form-group sub-box">
+								<button class="upload-btn" onclick="Upload_File()" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Uploading">Upload</button>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

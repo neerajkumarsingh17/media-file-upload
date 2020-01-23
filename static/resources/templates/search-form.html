@@ -1,0 +1,31 @@
+
+<form id="search-form" action="javascript:;">
+    <div class="inner-addon left-addon">
+    
+      <i class="glyphicon glyphicon-search"></i>
+      <input type="text" class="form-control" id="resource-input" placeholder="Search" />
+      
+    </div>
+</form>
+<div id="filter_drpdwn" class="hidden-sm hidden-xs">
+    <div id="rs_filetype"></div>
+</div>
+<button class="hidden-lg hidden-md filter_res" onclick="filter()" type="button">FILTER <i class="fa fa-caret-up" aria-hidden="true"></i></button>
+<script>
+function filter() {
+  $('.banner').toggle();
+  setTimeout(function(){
+    $('.left-nav').slideToggle(400);
+  }, 10);
+ 
+}
+</script>
+
+
+<!-- 
+<div class="input-group">
+  <div class="input-group-addon" id='rs_filetype' style='width:150px;'></div>
+  <div class="input-group-addon glyphicon glyphicon-search" id="basic-addon1"></div>
+      <input type="text" class="form-control" id="resource-input" placeholder="Search" />
+ <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+</div>-->

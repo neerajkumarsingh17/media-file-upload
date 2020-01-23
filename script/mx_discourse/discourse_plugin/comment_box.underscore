@@ -1,0 +1,16 @@
+<div class="row" id="<%= model['post_id'] %>_replyBoxMain" >
+    <div class="col-md-12" style="margin-bottom:10px;">
+            <form id="cmntbox">
+                    <div class="row secondary-editor">
+                        <div class="col-lg-11 col-md-10 col-xs-10 col-sm-11 cmntarea" style="padding-right: 0px;">
+                            <textarea id="<%= model['post_id'] %>replypost" name="post_message" class="form-control textDiscussion" rows="1" cols="1" placeholder="Add public reply"></textarea>
+                        </div>
+                        <div class="col-lg-1 col-md-2 col-xs-2 col-sm-1 cmntboxarea" style="padding-left: 2px;padding-top:2px;">
+                            <img style="width:30px;" src="/static/mx_discourse/discourse_plugin/images/send.png" id="<%= model['post_id']%>_replyPost"/>
+                        </div>
+                        <div class="img-responsive" col-lg-4 col-md-2 col-xs-12 col-sm-12 cmntboxarea">
+                      </div>
+                    </div>
+            </form>
+    </div>
+</div>

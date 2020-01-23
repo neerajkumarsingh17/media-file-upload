@@ -1,0 +1,34 @@
+<div class="resource-info">
+  <img src="<%= data.placeholder_image %>" onerror="this.onerror=null;this.src='/static/firki_theme_new/images/tfi-final-large-logo.svg';">
+  <div class="buttons">
+    <% if (data.file) { %>
+        <a href="<%= data.file %>" target="_new">
+          <i class="ti-download"></i> Download
+        </a>
+    <% }else{%>
+        <a href="<%= data.link %>" target="_new">
+          <i class="ti-download"></i> Download
+        </a>
+    <% } %>
+  </div>
+  <div class="cont">
+    <label>RESOURCE</label><br>
+    <span class="theme-color"><%= data.name %></span>
+  </div>
+  <div class="cont">
+    <label>GRADE</label><br>
+    <span>
+      <% _.each(data.grade, function(gd){ %>
+         <%= gd.name %>, 
+      <% }); %>
+    </span>
+  </div>
+  <div class="cont">
+    <label>SUBJECT</label><br>
+    <span><%= data.subject_name %></span>
+  </div>
+  <div class="cont">
+    <label>CONTENT PARTNER</label><br>
+    <span class="theme-color"><%= data.content_partner_name %></span>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+
+    <form id="cmntbox">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-xs-12 col-sm-12 cmntarea">
+                <textarea id="post_message" name="post_message" class="form-control textDiscussion" rows="1" cols="1" form="usrform" placeholder="please enter text"></textarea>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12 col-sm-12 cmntboxarea">
+                <button class="btn btn-block textSubDiscussion" 
+                    onclick="post_comment('6112')"><i class="fa fa-send">&nbsp;</i> </button>
+            </div>
+        </div>
+    </form>
+
+</div>
